@@ -12,7 +12,7 @@
 <script type="text/javascript" src="background_text_pattern.json"></script>
 <script>
     
-    var newText = JSON.parse(knightText);
+    var newText = JSON.parse(stereoText);
     var lineCounter = 0;
     var textCounter = 0;
         
@@ -23,7 +23,7 @@
         console.log(newText[textCounter].text);
         lineCounter++;
         textCounter++;
-        if (lineCounter >= 7) {
+        if (lineCounter >= 12) {
             lineCounter = 0;
         }
         if (textCounter >= newText.length) {
@@ -32,7 +32,7 @@
     }
 </script>
     
-<body onload="setInterval(change, 500);">
+<body onload="setInterval(change, 100);">
     
 <div id="background_text_wrapper">
     
@@ -52,12 +52,36 @@
     </div>
     <div id="textline7" class="background_text_line"> .........................................................................................................................
     </div>
+    <div id="textline8" class="background_text_line"> .........................................................................................................................
+    </div>
+    <div id="textline9" class="background_text_line"> .........................................................................................................................
+    </div>
+    <div id="textline10" class="background_text_line"> .........................................................................................................................
+    </div>
+    <div id="textline11" class="background_text_line"> .........................................................................................................................
+    </div>
+    <!--<div id="textline12" class="background_text_line"> .........................................................................................................................
+    </div>
+    <div id="textline13" class="background_text_line"> .........................................................................................................................
+    </div>
+    <div id="textline14" class="background_text_line"> .........................................................................................................................
+    </div>
+    <div id="textline15" class="background_text_line"> .........................................................................................................................
+    </div>
+    <div id="textline16" class="background_text_line"> .........................................................................................................................
+    </div>
+    <div id="textline17" class="background_text_line"> .........................................................................................................................
+    </div>
+    <div id="textline18" class="background_text_line"> .........................................................................................................................
+    </div>
+    <div id="textline19" class="background_text_line"> .........................................................................................................................
+    </div>-->
 </div>
 
 <div id="link_wrapper">
-    <a href="https://cbm54d.github.io/Knights-Tour/">Knight's Tour</a><br>
-    <a href="https://cbm54d.github.io/Eight-Queens/">Eight Queens</a><br>
-    <a href="https://cbm54d.github.io/Cross-Invert/">Cross Invert</a><br>
+    <a href="https://cbm54d.github.io/Knights-Tour/">Knight's Tour</a>
+    <a href="https://cbm54d.github.io/Eight-Queens/">Eight Queens</a>
+    <a href="https://cbm54d.github.io/Cross-Invert/">Cross Invert</a>
 </div>
 </body>    
 </html>
