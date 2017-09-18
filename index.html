@@ -13,16 +13,37 @@
 <script>
     
     var newText = JSON.parse(stereoText);
+    var messageText = JSON.parse(messageText);
+    var submessageText = JSON.parse(submessageText);
     var lineCounter = 0;
     var textCounter = 0;
+    var subMsgCounter = 0;
         
     function change() {
         var lineID = "textline" + lineCounter.toString();
         var elem = document.getElementById(lineID);
-        elem.innerHTML = newText[textCounter].text;
-        console.log(newText[textCounter].text);
+        
+        switch(lineCounter) {
+            case 5:
+                var messageLength = messageText[0].text.length;
+                elem.innerHTML = newText[textCounter].text.substr(0,(67 - messageLength)/2) + " " + messageText[0].text + " " + newText[textCounter].text.substr(69 - ((66 - messageLength)/2),66);
+                break;
+            case 6:
+                var messageLength = submessageText[subMsgCounter].text.length;
+                elem.innerHTML = newText[textCounter].text.substr(0,(68 - messageLength)/2 - 1) + " " + submessageText[subMsgCounter].text + " " + newText[textCounter].text.substr(68 - ((66 - messageLength)/2),66);
+                if( subMsgCounter >= 3 ) {
+                    subMsgCounter = 0;
+                } else {
+                    subMsgCounter++;
+                }
+                break;
+            default:
+                elem.innerHTML = newText[textCounter].text;
+        }
+        
         lineCounter++;
         textCounter++;
+        
         if (lineCounter >= 12) {
             lineCounter = 0;
         }
