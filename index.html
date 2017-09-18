@@ -26,19 +26,48 @@
         switch(lineCounter) {
             case 5:
                 var messageLength = messageText[0].text.length;
-                elem.innerHTML = newText[textCounter].text.substr(0,(67 - messageLength)/2) + " " + messageText[0].text + " " + newText[textCounter].text.substr(69 - ((66 - messageLength)/2),66);
+                /*elem.innerHTML = newText[textCounter].text.substr(0,(67 - messageLength)/2) + " " + messageText[0].text + " " + newText[textCounter].text.substr(69 - ((66 - messageLength)/2),66);
+                break;*/
+                
+                var span50 = document.getElementById("span50");
+                var span51 = document.getElementById("span51");
+                var span52 = document.getElementById("span52");
+                
+                span50.innerHTML = newText[textCounter].text.substr(0,(67 - messageLength)/2) + " ";
+                
+                span51.innerHTML = messageText[0].text;
+                
+                span52.innerHTML = " " + newText[textCounter].text.substr(69 - ((66 - messageLength)/2),66);
+                
                 break;
+                
             case 6:
+                /*var messageLength = submessageText[subMsgCounter].text.length;
+                elem.innerHTML = newText[textCounter].text.substr(0,(68 - messageLength)/2 - 1) + " " + submessageText[subMsgCounter].text + " " + newText[textCounter].text.substr(68 - ((66 - messageLength)/2),66);*/
+                
                 var messageLength = submessageText[subMsgCounter].text.length;
-                elem.innerHTML = newText[textCounter].text.substr(0,(68 - messageLength)/2 - 1) + " " + submessageText[subMsgCounter].text + " " + newText[textCounter].text.substr(68 - ((66 - messageLength)/2),66);
+                
+                var span60 = document.getElementById("span60");
+                var span61 = document.getElementById("span61");
+                var span62 = document.getElementById("span62");
+                
+                span60.innerHTML = newText[textCounter].text.substr(0,(68 - messageLength)/2 - 1) + " ";
+                
+                span61.innerHTML = submessageText[subMsgCounter].text;
+                
+                span62.innerHTML = " " + newText[textCounter].text.substr(68 - ((66 - messageLength)/2),66);
+                
                 if( subMsgCounter >= 3 ) {
                     subMsgCounter = 0;
                 } else {
                     subMsgCounter++;
                 }
+                
                 break;
+                
             default:
                 elem.innerHTML = newText[textCounter].text;
+                break;
         }
         
         lineCounter++;
@@ -67,11 +96,20 @@
     </div>
     <div id="textline4" class="background_text_line"> .........................................................................................................................
     </div>
-    <div id="textline5" class="background_text_line"> .........................................................................................................................
+    <div id="textline5" class="background_text_line">
+        <span id="span50" class="background_text">.....</span>
+        <span id="span51" class="message_text">.....</span>
+        <span id="span52" class="background_text">.....</span>
     </div>
-    <div id="textline6" class="background_text_line"> .........................................................................................................................
+    <div id="textline6" class="background_text_line"> 
+        <span id="span60" class="background_text">.....</span>
+        <span id="span61" class="message_text">.....</span>
+        <span id="span62" class="background_text">.....</span>
     </div>
-    <div id="textline7" class="background_text_line"> .........................................................................................................................
+    <div id="textline7" class="background_text_line"> 
+        <span id="span70" class="background_text">.....</span>
+        <span id="span71" class="message_text">.....</span>
+        <span id="span72" class="background_text">.....</span>
     </div>
     <div id="textline8" class="background_text_line"> .........................................................................................................................
     </div>
@@ -100,9 +138,9 @@
 </div>
 
 <div id="link_wrapper">
-    <a href="https://cbm54d.github.io/Knights-Tour/">Knight's Tour</a>
-    <a href="https://cbm54d.github.io/Eight-Queens/">Eight Queens</a>
-    <a href="https://cbm54d.github.io/Cross-Invert/">Cross Invert</a>
+    <a href="https://cbm54d.github.io/Knights-Tour/" target="_blank">Knight's Tour</a>
+    <a href="https://cbm54d.github.io/Eight-Queens/" target="_blank">Eight Queens</a>
+    <a href="https://cbm54d.github.io/Cross-Invert/" target="_blank">Cross Invert</a>
 </div>
 </body>    
 </html>

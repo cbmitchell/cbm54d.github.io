@@ -22,7 +22,12 @@ a {
 #background_text_wrapper {
     font-family: 'VT323', monospace;
     font-size: 47px;
-    color: white;
+    color: darkturquoise;
     margin: 0 auto;
     width: 1260px;
+    cursor: default;
+}
+
+span.message_text {
+    color: white;
 }
