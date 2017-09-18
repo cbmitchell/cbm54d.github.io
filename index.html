@@ -6,29 +6,51 @@
     <meta charset="UTF-8">
     <title>Chris Mitchell</title>
     <link rel="stylesheet" href="main.css">
-    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
-</head>
-    
+    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet"> 
+</head>  
+
+<script type="text/javascript" src="background_text_pattern.json"></script>
 <script>
-    var text = ["example1", "example2", "example3"];
-    var counter = 0;
+    
+    var newText = JSON.parse(knightText);
+    var lineCounter = 0;
+    var textCounter = 0;
         
     function change() {
-        var elem = document.getElementById("textline1");
-        elem.innerHTML = text[counter];
-        console.log(counter);
-        counter++;
-        if (counter >= text.length) {
-            counter = 0;
+        var lineID = "textline" + lineCounter.toString();
+        var elem = document.getElementById(lineID);
+        elem.innerHTML = newText[textCounter].text;
+        console.log(newText[textCounter].text);
+        lineCounter++;
+        textCounter++;
+        if (lineCounter >= 7) {
+            lineCounter = 0;
+        }
+        if (textCounter >= newText.length) {
+            textCounter = 0;
         }
     }
 </script>
     
-<body onload="setInterval(change, 1000);">
+<body onload="setInterval(change, 500);">
     
 <div id="background_text_wrapper">
-    <div id="textline1" class="background_text_line">
-        ..................................
+    
+    <div id="textline0" class="background_text_line"> .........................................................................................................................
+    </div>
+    <div id="textline1" class="background_text_line"> .........................................................................................................................
+    </div>
+    <div id="textline2" class="background_text_line"> .........................................................................................................................
+    </div>
+    <div id="textline3" class="background_text_line"> .........................................................................................................................
+    </div>
+    <div id="textline4" class="background_text_line"> .........................................................................................................................
+    </div>
+    <div id="textline5" class="background_text_line"> .........................................................................................................................
+    </div>
+    <div id="textline6" class="background_text_line"> .........................................................................................................................
+    </div>
+    <div id="textline7" class="background_text_line"> .........................................................................................................................
     </div>
 </div>
 
